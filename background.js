@@ -43,7 +43,7 @@ Promise.all([loadImage('./lesser1.png'), loadImage('./lesser2.png')]).then(imgs 
 
 browser.runtime.onMessage.addListener(message => {
   if (message.type === 'scroll') {
-    scroll += Math.abs(message.scroll / 100)
+    scroll += message.scroll / 10
   } else if (message.type === 'resize') {
     changeSize(message.width)
   }
