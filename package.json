@@ -1,0 +1,16 @@
+{
+  "name": "lesser-dog",
+  "version": "1.0.0",
+  "main": "client.js",
+  "repository": "https://github.com/shundroid/lesser-dogs.git",
+  "author": "shundroid <shundroidk@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2017": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1"
+  },
+  "scripts": {
+    "build": "babel client.js --out-file dist.js"
+  }
+}

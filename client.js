@@ -1,22 +1,5 @@
 class LesserDog {
   constructor() {
-    this.changeHeight = () => {
-      this.parent.style.height = `${100 - this.getCurrentPosition() / this.getFullHeight() * 100}%`
-    }
-    this.startScrolling = event => {
-      this.startY = event.layerY
-      window.addEventListener('mousemove', this.scroll)
-      window.addEventListener('mouseup', this.finishScrolling)
-    }
-    this.scroll = event => {
-      const percent = (event.clientY - this.startY) / window.innerHeight
-      document.scrollingElement.scrollTop = this.getFullHeight() * percent
-    }
-    this.finishScrolling = () => {
-      window.removeEventListener('mousemove', this.scroll)
-      window.removeEventListener('mouseup', this.finishScrolling)
-    }
-
     this.makeLesserDog()
     window.addEventListener('scroll', this.changeHeight)
     this.changeHeight()
@@ -46,6 +29,22 @@ class LesserDog {
   }
   getCurrentPosition() {
     return document.scrollingElement.scrollTop
+  }
+  changeHeight = () => {
+    this.parent.style.height = `${100 - this.getCurrentPosition() / this.getFullHeight() * 100}%`
+  }
+  startScrolling = event => {
+    this.startY = event.layerY
+    window.addEventListener('mousemove', this.scroll)
+    window.addEventListener('mouseup', this.finishScrolling)
+  }
+  scroll = event => {
+    const percent = (event.clientY - this.startY) / window.innerHeight
+    document.scrollingElement.scrollTop = this.getFullHeight() * percent
+  }
+  finishScrolling = () => {
+    window.removeEventListener('mousemove', this.scroll)
+    window.removeEventListener('mouseup', this.finishScrolling)
   }
 }
 

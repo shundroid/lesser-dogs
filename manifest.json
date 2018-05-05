@@ -9,12 +9,9 @@
   "content_scripts": [
     {
       "matches": ["*://*/*"],
-      "js": ["client.js"]
+      "js": ["dist.js"]
     }
   ],
-  "background": {
-    "scripts": ["background.js"]
-  },
   "version": "1.0",
   "applications": {
     "gecko": {
