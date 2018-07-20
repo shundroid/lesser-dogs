@@ -1,3 +1,9 @@
+function makeImageElement(src) {
+  const element = document.createElement('img')
+  element.src = browser.extension.getURL(src)
+  element.ondragstart = () => false
+  return element
+}
 class LesserDog {
   constructor() {
     this.makeLesserDog()
@@ -14,18 +20,12 @@ class LesserDog {
     this.parent.style.zIndex = '999'
     this.parent.style.display = 'flex'
     this.parent.style.flexDirection = 'column'
-    this.droidHead = document.createElement('img')
-    this.droidHead.src = browser.extension.getURL('droid-head.png')
-    this.droidHead.ondragstart = () => false
+    this.droidHead = makeImageElement('droid-head.png')
     this.parent.appendChild(this.droidHead)
-    this.droidBody = document.createElement('img')
-    this.droidBody.src = browser.extension.getURL('droid-body.png')
+    this.droidBody = makeImageElement('droid-body.png')
     this.droidBody.style.flex = '1'
-    this.droidBody.ondragstart = () => false
     this.parent.appendChild(this.droidBody)
-    this.droidLegs = document.createElement('img')
-    this.droidLegs.src = browser.extension.getURL('droid-legs.png')
-    this.droidLegs.ondragstart = () => false
+    this.droidLegs = makeImageElement('droid-legs.png')
     this.parent.appendChild(this.droidLegs)
   }
   getFullHeight() {
