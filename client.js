@@ -3,7 +3,7 @@ class LesserDog {
     this.makeLesserDog()
     window.addEventListener('scroll', this.changeHeight)
     this.changeHeight()
-    this.lesserHead.addEventListener('mousedown', this.startScrolling)
+    this.droidHead.addEventListener('mousedown', this.startScrolling)
   }
   makeLesserDog() {
     this.parent = document.createElement('div')
@@ -14,15 +14,19 @@ class LesserDog {
     this.parent.style.zIndex = '999'
     this.parent.style.display = 'flex'
     this.parent.style.flexDirection = 'column'
-    this.lesserHead = document.createElement('img')
-    this.lesserHead.src = browser.extension.getURL('lesserHead.png')
-    this.lesserHead.ondragstart = () => false
-    this.parent.appendChild(this.lesserHead)
-    this.lesserBody = document.createElement('img')
-    this.lesserBody.src = browser.extension.getURL('lesserBody.png')
-    this.lesserBody.style.flex = '1'
-    this.lesserBody.ondragstart = () => false
-    this.parent.appendChild(this.lesserBody)
+    this.droidHead = document.createElement('img')
+    this.droidHead.src = browser.extension.getURL('droid-head.png')
+    this.droidHead.ondragstart = () => false
+    this.parent.appendChild(this.droidHead)
+    this.droidBody = document.createElement('img')
+    this.droidBody.src = browser.extension.getURL('droid-body.png')
+    this.droidBody.style.flex = '1'
+    this.droidBody.ondragstart = () => false
+    this.parent.appendChild(this.droidBody)
+    this.droidLegs = document.createElement('img')
+    this.droidLegs.src = browser.extension.getURL('droid-legs.png')
+    this.droidLegs.ondragstart = () => false
+    this.parent.appendChild(this.droidLegs)
   }
   getFullHeight() {
     return document.scrollingElement.scrollHeight
