@@ -1,6 +1,6 @@
 # lesser-dog
 
-![](./readme/lesserdog.gif)
+![](./readme/droid.gif)
 
 ## Setup
 
